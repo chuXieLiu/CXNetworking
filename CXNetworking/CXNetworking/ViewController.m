@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "NSDictionary+CXNetworkingMethods.h"
 
 @interface ViewController ()
 
@@ -16,12 +17,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    NSDictionary *dict = @{
+                           @"a":@"1",
+                           @"z":@"2",
+                           @"c":@"3&",
+                           @"q":@"1",
+                           @"h":@"2",
+                           @"i":@"3&"
+                           };
+    NSLog(@"==>%@",dict);
+    NSLog(@"%@",[dict URLParamsString]);
+    NSString *str = @"123&123";
+    NSString *temp = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"%@",temp);
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 @end
