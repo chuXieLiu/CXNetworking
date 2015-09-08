@@ -28,7 +28,7 @@ extern NSString * const KCXNetworkingManagerRequestID;
 @end
 
 // 验证器，验证api返回的数据或调用api的参数是否正确
-@protocol CXNetworkingAPIManagerVAlidator <NSObject>
+@protocol CXNetworkingAPIManagerValidator <NSObject>
 
 @required
 - (BOOL)manager:(CXNetworkingBaseAPIManager *)manager isCorrectWithCallBackDada:(NSDictionary *)data;
@@ -68,7 +68,7 @@ typedef NS_ENUM (NSUInteger, CXNetworkingAPIManagerRequestType){
 
 @required
 - (NSString *)methodName;
-- (NSString *)serviceType;
+//- (NSString *)serviceType;
 - (CXNetworkingAPIManagerRequestType)requestType;
 
 @optional
@@ -92,7 +92,7 @@ typedef NS_ENUM (NSUInteger, CXNetworkingAPIManagerRequestType){
 
 @property (weak,nonatomic) id<CXNetworkingAPIManagerCallBackDelegate> delegate;
 @property (weak,nonatomic) id<CXNetworkingAPIManagerParamSourceDelegate> paramSource;
-@property (weak,nonatomic) id<CXNetworkingAPIManagerVAlidator> validator;
+@property (weak,nonatomic) id<CXNetworkingAPIManagerValidator> validator;
 @property (weak,nonatomic) id<CXNetworkingAPIManagerInterceptor> interceptor;
 @property (weak,nonatomic) NSObject<CXNetworkingAPIManager> *child;
 

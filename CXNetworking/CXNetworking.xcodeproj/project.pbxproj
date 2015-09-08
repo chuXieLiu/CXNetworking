@@ -9,12 +9,9 @@
 /* Begin PBXBuildFile section */
 		F97CEF5C1B916BF700621D33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEF5B1B916BF700621D33 /* main.m */; };
 		F97CEF5F1B916BF700621D33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEF5E1B916BF700621D33 /* AppDelegate.m */; };
-		F97CEF621B916BF700621D33 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEF611B916BF700621D33 /* ViewController.m */; };
-		F97CEF651B916BF700621D33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F97CEF631B916BF700621D33 /* Main.storyboard */; };
 		F97CEF671B916BF700621D33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F97CEF661B916BF700621D33 /* Images.xcassets */; };
 		F97CEF6A1B916BF700621D33 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97CEF681B916BF700621D33 /* LaunchScreen.xib */; };
 		F97CEF761B916BF700621D33 /* CXNetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEF751B916BF700621D33 /* CXNetworkingTests.m */; };
-		F97CEF821B916D3500621D33 /* CXApiProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEF811B916D3500621D33 /* CXApiProxy.m */; };
 		F97CEF981B916D7700621D33 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEF861B916D7700621D33 /* AFHTTPRequestOperation.m */; };
 		F97CEF991B916D7700621D33 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEF881B916D7700621D33 /* AFHTTPRequestOperationManager.m */; };
 		F97CEF9A1B916D7700621D33 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEF8A1B916D7700621D33 /* AFHTTPSessionManager.m */; };
@@ -24,16 +21,24 @@
 		F97CEF9E1B916D7700621D33 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEF931B916D7700621D33 /* AFURLRequestSerialization.m */; };
 		F97CEF9F1B916D7700621D33 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEF951B916D7700621D33 /* AFURLResponseSerialization.m */; };
 		F97CEFA01B916D7700621D33 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEF971B916D7700621D33 /* AFURLSessionManager.m */; };
-		F97CEFA31B916E1D00621D33 /* CXURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEFA21B916E1D00621D33 /* CXURLResponse.m */; };
-		F97CEFA61B918B1800621D33 /* CXNetworkingConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEFA51B918B1800621D33 /* CXNetworkingConfiguration.m */; };
 		F97CEFAA1B91A56F00621D33 /* NSURLRequest+CXNetworkingMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEFA91B91A56F00621D33 /* NSURLRequest+CXNetworkingMethods.m */; };
-		F97CEFAD1B91DB7C00621D33 /* CXRequestGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEFAC1B91DB7C00621D33 /* CXRequestGenerator.m */; };
-		F97CEFB31B91DF5A00621D33 /* CXRequestContext.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEFB21B91DF5A00621D33 /* CXRequestContext.m */; };
-		F97CEFB61B91ED3300621D33 /* CXCommonParamsGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEFB51B91ED3300621D33 /* CXCommonParamsGenerator.m */; };
 		F97CEFB91B91EE1F00621D33 /* NSDictionary+CXNetworkingMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEFB81B91EE1F00621D33 /* NSDictionary+CXNetworkingMethods.m */; };
 		F97CEFBC1B91EE3500621D33 /* NSArray+CXNetworkingMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEFBB1B91EE3500621D33 /* NSArray+CXNetworkingMethods.m */; };
-		F97CEFBF1B91FCAD00621D33 /* CXService.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEFBE1B91FCAD00621D33 /* CXService.m */; };
-		F97CEFC21B92051700621D33 /* CXNetworkingBaseAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEFC11B92051700621D33 /* CXNetworkingBaseAPIManager.m */; };
+		F9F1F9121B9C70000052D17C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F1F90F1B9C70000052D17C /* Main.storyboard */; };
+		F9F1F9131B9C70000052D17C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F9111B9C70000052D17C /* ViewController.m */; };
+		F9F1F9161B9C70640052D17C /* TeHuiAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F9151B9C70640052D17C /* TeHuiAPIManager.m */; };
+		F9F1F9191B9C74380052D17C /* VCTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F9181B9C74380052D17C /* VCTools.m */; };
+		F9F1F92F1B9C90DB0052D17C /* CXApiProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F9201B9C90DB0052D17C /* CXApiProxy.m */; };
+		F9F1F9301B9C90DB0052D17C /* CXCommonParamsGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F9221B9C90DB0052D17C /* CXCommonParamsGenerator.m */; };
+		F9F1F9311B9C90DB0052D17C /* CXNetworkingBaseAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F9241B9C90DB0052D17C /* CXNetworkingBaseAPIManager.m */; };
+		F9F1F9321B9C90DB0052D17C /* CXNetworkingConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F9261B9C90DB0052D17C /* CXNetworkingConfiguration.m */; };
+		F9F1F9331B9C90DB0052D17C /* CXRequestContext.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F9281B9C90DB0052D17C /* CXRequestContext.m */; };
+		F9F1F9341B9C90DB0052D17C /* CXRequestGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F92A1B9C90DB0052D17C /* CXRequestGenerator.m */; };
+		F9F1F9351B9C90DB0052D17C /* CXService.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F92C1B9C90DB0052D17C /* CXService.m */; };
+		F9F1F9361B9C90DB0052D17C /* CXURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F92E1B9C90DB0052D17C /* CXURLResponse.m */; };
+		F9F1F98B1B9DE1D30052D17C /* CXCoreProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F9871B9DE1D30052D17C /* CXCoreProxy.m */; };
+		F9F1F98E1B9DE21C0052D17C /* CXCoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F98D1B9DE21C0052D17C /* CXCoreRequest.m */; };
+		F9F1F9911B9E8C190052D17C /* CXCoreService.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F9901B9E8C190052D17C /* CXCoreService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,16 +57,11 @@
 		F97CEF5B1B916BF700621D33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F97CEF5D1B916BF700621D33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F97CEF5E1B916BF700621D33 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F97CEF601B916BF700621D33 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F97CEF611B916BF700621D33 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F97CEF641B916BF700621D33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F97CEF661B916BF700621D33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F97CEF691B916BF700621D33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F97CEF6F1B916BF700621D33 /* CXNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CXNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F97CEF741B916BF700621D33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F97CEF751B916BF700621D33 /* CXNetworkingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXNetworkingTests.m; sourceTree = "<group>"; };
-		F97CEF801B916D3500621D33 /* CXApiProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXApiProxy.h; sourceTree = "<group>"; };
-		F97CEF811B916D3500621D33 /* CXApiProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXApiProxy.m; sourceTree = "<group>"; };
 		F97CEF851B916D7700621D33 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		F97CEF861B916D7700621D33 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		F97CEF871B916D7700621D33 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -81,26 +81,41 @@
 		F97CEF951B916D7700621D33 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		F97CEF961B916D7700621D33 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		F97CEF971B916D7700621D33 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
-		F97CEFA11B916E1D00621D33 /* CXURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXURLResponse.h; sourceTree = "<group>"; };
-		F97CEFA21B916E1D00621D33 /* CXURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXURLResponse.m; sourceTree = "<group>"; };
-		F97CEFA41B918B1800621D33 /* CXNetworkingConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXNetworkingConfiguration.h; sourceTree = "<group>"; };
-		F97CEFA51B918B1800621D33 /* CXNetworkingConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXNetworkingConfiguration.m; sourceTree = "<group>"; };
 		F97CEFA81B91A56F00621D33 /* NSURLRequest+CXNetworkingMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+CXNetworkingMethods.h"; sourceTree = "<group>"; };
 		F97CEFA91B91A56F00621D33 /* NSURLRequest+CXNetworkingMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+CXNetworkingMethods.m"; sourceTree = "<group>"; };
-		F97CEFAB1B91DB7C00621D33 /* CXRequestGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXRequestGenerator.h; sourceTree = "<group>"; };
-		F97CEFAC1B91DB7C00621D33 /* CXRequestGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXRequestGenerator.m; sourceTree = "<group>"; };
-		F97CEFB11B91DF5A00621D33 /* CXRequestContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXRequestContext.h; sourceTree = "<group>"; };
-		F97CEFB21B91DF5A00621D33 /* CXRequestContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXRequestContext.m; sourceTree = "<group>"; };
-		F97CEFB41B91ED3300621D33 /* CXCommonParamsGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXCommonParamsGenerator.h; sourceTree = "<group>"; };
-		F97CEFB51B91ED3300621D33 /* CXCommonParamsGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXCommonParamsGenerator.m; sourceTree = "<group>"; };
 		F97CEFB71B91EE1F00621D33 /* NSDictionary+CXNetworkingMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+CXNetworkingMethods.h"; sourceTree = "<group>"; };
 		F97CEFB81B91EE1F00621D33 /* NSDictionary+CXNetworkingMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+CXNetworkingMethods.m"; sourceTree = "<group>"; };
 		F97CEFBA1B91EE3500621D33 /* NSArray+CXNetworkingMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CXNetworkingMethods.h"; sourceTree = "<group>"; };
 		F97CEFBB1B91EE3500621D33 /* NSArray+CXNetworkingMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CXNetworkingMethods.m"; sourceTree = "<group>"; };
-		F97CEFBD1B91FCAD00621D33 /* CXService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXService.h; sourceTree = "<group>"; };
-		F97CEFBE1B91FCAD00621D33 /* CXService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXService.m; sourceTree = "<group>"; };
-		F97CEFC01B92051700621D33 /* CXNetworkingBaseAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXNetworkingBaseAPIManager.h; sourceTree = "<group>"; };
-		F97CEFC11B92051700621D33 /* CXNetworkingBaseAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXNetworkingBaseAPIManager.m; sourceTree = "<group>"; };
+		F9F1F90F1B9C70000052D17C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F9F1F9101B9C70000052D17C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F9F1F9111B9C70000052D17C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F9F1F9141B9C70640052D17C /* TeHuiAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeHuiAPIManager.h; sourceTree = "<group>"; };
+		F9F1F9151B9C70640052D17C /* TeHuiAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeHuiAPIManager.m; sourceTree = "<group>"; };
+		F9F1F9171B9C74380052D17C /* VCTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCTools.h; sourceTree = "<group>"; };
+		F9F1F9181B9C74380052D17C /* VCTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCTools.m; sourceTree = "<group>"; };
+		F9F1F91F1B9C90DB0052D17C /* CXApiProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXApiProxy.h; sourceTree = "<group>"; };
+		F9F1F9201B9C90DB0052D17C /* CXApiProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXApiProxy.m; sourceTree = "<group>"; };
+		F9F1F9211B9C90DB0052D17C /* CXCommonParamsGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXCommonParamsGenerator.h; sourceTree = "<group>"; };
+		F9F1F9221B9C90DB0052D17C /* CXCommonParamsGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXCommonParamsGenerator.m; sourceTree = "<group>"; };
+		F9F1F9231B9C90DB0052D17C /* CXNetworkingBaseAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXNetworkingBaseAPIManager.h; sourceTree = "<group>"; };
+		F9F1F9241B9C90DB0052D17C /* CXNetworkingBaseAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXNetworkingBaseAPIManager.m; sourceTree = "<group>"; };
+		F9F1F9251B9C90DB0052D17C /* CXNetworkingConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXNetworkingConfiguration.h; sourceTree = "<group>"; };
+		F9F1F9261B9C90DB0052D17C /* CXNetworkingConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXNetworkingConfiguration.m; sourceTree = "<group>"; };
+		F9F1F9271B9C90DB0052D17C /* CXRequestContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXRequestContext.h; sourceTree = "<group>"; };
+		F9F1F9281B9C90DB0052D17C /* CXRequestContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXRequestContext.m; sourceTree = "<group>"; };
+		F9F1F9291B9C90DB0052D17C /* CXRequestGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXRequestGenerator.h; sourceTree = "<group>"; };
+		F9F1F92A1B9C90DB0052D17C /* CXRequestGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXRequestGenerator.m; sourceTree = "<group>"; };
+		F9F1F92B1B9C90DB0052D17C /* CXService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXService.h; sourceTree = "<group>"; };
+		F9F1F92C1B9C90DB0052D17C /* CXService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXService.m; sourceTree = "<group>"; };
+		F9F1F92D1B9C90DB0052D17C /* CXURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXURLResponse.h; sourceTree = "<group>"; };
+		F9F1F92E1B9C90DB0052D17C /* CXURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXURLResponse.m; sourceTree = "<group>"; };
+		F9F1F9861B9DE1D30052D17C /* CXCoreProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXCoreProxy.h; sourceTree = "<group>"; };
+		F9F1F9871B9DE1D30052D17C /* CXCoreProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXCoreProxy.m; sourceTree = "<group>"; };
+		F9F1F98C1B9DE21C0052D17C /* CXCoreRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXCoreRequest.h; sourceTree = "<group>"; };
+		F9F1F98D1B9DE21C0052D17C /* CXCoreRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXCoreRequest.m; sourceTree = "<group>"; };
+		F9F1F98F1B9E8C190052D17C /* CXCoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXCoreService.h; sourceTree = "<group>"; };
+		F9F1F9901B9E8C190052D17C /* CXCoreService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXCoreService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,13 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				F97CEF7F1B916CFB00621D33 /* CXNetworking */,
-				F97CEF5D1B916BF700621D33 /* AppDelegate.h */,
-				F97CEF5E1B916BF700621D33 /* AppDelegate.m */,
-				F97CEF601B916BF700621D33 /* ViewController.h */,
-				F97CEF611B916BF700621D33 /* ViewController.m */,
-				F97CEF631B916BF700621D33 /* Main.storyboard */,
-				F97CEF661B916BF700621D33 /* Images.xcassets */,
-				F97CEF681B916BF700621D33 /* LaunchScreen.xib */,
+				F9F1F90E1B9C70000052D17C /* Example */,
 				F97CEF591B916BF700621D33 /* Supporting Files */,
 			);
 			path = CXNetworking;
@@ -158,6 +167,10 @@
 		F97CEF591B916BF700621D33 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F97CEF681B916BF700621D33 /* LaunchScreen.xib */,
+				F97CEF661B916BF700621D33 /* Images.xcassets */,
+				F97CEF5D1B916BF700621D33 /* AppDelegate.h */,
+				F97CEF5E1B916BF700621D33 /* AppDelegate.m */,
 				F97CEF5A1B916BF700621D33 /* Info.plist */,
 				F97CEF5B1B916BF700621D33 /* main.m */,
 			);
@@ -184,24 +197,10 @@
 		F97CEF7F1B916CFB00621D33 /* CXNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				F9F1F91A1B9C87710052D17C /* Core */,
 				F97CEFA71B91A53A00621D33 /* Categories */,
 				F97CEF831B916D4A00621D33 /* Lib */,
-				F97CEFC01B92051700621D33 /* CXNetworkingBaseAPIManager.h */,
-				F97CEFC11B92051700621D33 /* CXNetworkingBaseAPIManager.m */,
-				F97CEF801B916D3500621D33 /* CXApiProxy.h */,
-				F97CEF811B916D3500621D33 /* CXApiProxy.m */,
-				F97CEFBD1B91FCAD00621D33 /* CXService.h */,
-				F97CEFBE1B91FCAD00621D33 /* CXService.m */,
-				F97CEFB11B91DF5A00621D33 /* CXRequestContext.h */,
-				F97CEFB21B91DF5A00621D33 /* CXRequestContext.m */,
-				F97CEFB41B91ED3300621D33 /* CXCommonParamsGenerator.h */,
-				F97CEFB51B91ED3300621D33 /* CXCommonParamsGenerator.m */,
-				F97CEFA11B916E1D00621D33 /* CXURLResponse.h */,
-				F97CEFA21B916E1D00621D33 /* CXURLResponse.m */,
-				F97CEFAB1B91DB7C00621D33 /* CXRequestGenerator.h */,
-				F97CEFAC1B91DB7C00621D33 /* CXRequestGenerator.m */,
-				F97CEFA41B918B1800621D33 /* CXNetworkingConfiguration.h */,
-				F97CEFA51B918B1800621D33 /* CXNetworkingConfiguration.m */,
+				F9F1F91E1B9C90DB0052D17C /* CXNetworkingTest */,
 			);
 			path = CXNetworking;
 			sourceTree = "<group>";
@@ -251,6 +250,96 @@
 				F97CEFBB1B91EE3500621D33 /* NSArray+CXNetworkingMethods.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		F9F1F90E1B9C70000052D17C /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				F9F1F9101B9C70000052D17C /* ViewController.h */,
+				F9F1F9111B9C70000052D17C /* ViewController.m */,
+				F9F1F90F1B9C70000052D17C /* Main.storyboard */,
+				F9F1F9141B9C70640052D17C /* TeHuiAPIManager.h */,
+				F9F1F9151B9C70640052D17C /* TeHuiAPIManager.m */,
+				F9F1F9171B9C74380052D17C /* VCTools.h */,
+				F9F1F9181B9C74380052D17C /* VCTools.m */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		F9F1F91A1B9C87710052D17C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F9F1F9841B9DE1D30052D17C /* Context */,
+				F9F1F9851B9DE1D30052D17C /* Proxy */,
+				F9F1F9881B9DE1D30052D17C /* Request */,
+				F9F1F9891B9DE1D30052D17C /* Response */,
+				F9F1F98A1B9DE1D30052D17C /* Service */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F9F1F91E1B9C90DB0052D17C /* CXNetworkingTest */ = {
+			isa = PBXGroup;
+			children = (
+				F9F1F91F1B9C90DB0052D17C /* CXApiProxy.h */,
+				F9F1F9201B9C90DB0052D17C /* CXApiProxy.m */,
+				F9F1F9211B9C90DB0052D17C /* CXCommonParamsGenerator.h */,
+				F9F1F9221B9C90DB0052D17C /* CXCommonParamsGenerator.m */,
+				F9F1F9231B9C90DB0052D17C /* CXNetworkingBaseAPIManager.h */,
+				F9F1F9241B9C90DB0052D17C /* CXNetworkingBaseAPIManager.m */,
+				F9F1F9251B9C90DB0052D17C /* CXNetworkingConfiguration.h */,
+				F9F1F9261B9C90DB0052D17C /* CXNetworkingConfiguration.m */,
+				F9F1F9271B9C90DB0052D17C /* CXRequestContext.h */,
+				F9F1F9281B9C90DB0052D17C /* CXRequestContext.m */,
+				F9F1F9291B9C90DB0052D17C /* CXRequestGenerator.h */,
+				F9F1F92A1B9C90DB0052D17C /* CXRequestGenerator.m */,
+				F9F1F92B1B9C90DB0052D17C /* CXService.h */,
+				F9F1F92C1B9C90DB0052D17C /* CXService.m */,
+				F9F1F92D1B9C90DB0052D17C /* CXURLResponse.h */,
+				F9F1F92E1B9C90DB0052D17C /* CXURLResponse.m */,
+			);
+			path = CXNetworkingTest;
+			sourceTree = "<group>";
+		};
+		F9F1F9841B9DE1D30052D17C /* Context */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Context;
+			sourceTree = "<group>";
+		};
+		F9F1F9851B9DE1D30052D17C /* Proxy */ = {
+			isa = PBXGroup;
+			children = (
+				F9F1F9861B9DE1D30052D17C /* CXCoreProxy.h */,
+				F9F1F9871B9DE1D30052D17C /* CXCoreProxy.m */,
+			);
+			path = Proxy;
+			sourceTree = "<group>";
+		};
+		F9F1F9881B9DE1D30052D17C /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				F9F1F98C1B9DE21C0052D17C /* CXCoreRequest.h */,
+				F9F1F98D1B9DE21C0052D17C /* CXCoreRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		F9F1F9891B9DE1D30052D17C /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		F9F1F98A1B9DE1D30052D17C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F9F1F98F1B9E8C190052D17C /* CXCoreService.h */,
+				F9F1F9901B9E8C190052D17C /* CXCoreService.m */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,9 +422,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F97CEF651B916BF700621D33 /* Main.storyboard in Resources */,
 				F97CEF6A1B916BF700621D33 /* LaunchScreen.xib in Resources */,
 				F97CEF671B916BF700621D33 /* Images.xcassets in Resources */,
+				F9F1F9121B9C70000052D17C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,29 +442,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F97CEFA61B918B1800621D33 /* CXNetworkingConfiguration.m in Sources */,
-				F97CEF621B916BF700621D33 /* ViewController.m in Sources */,
+				F9F1F9331B9C90DB0052D17C /* CXRequestContext.m in Sources */,
 				F97CEF9C1B916D7700621D33 /* AFSecurityPolicy.m in Sources */,
-				F97CEFC21B92051700621D33 /* CXNetworkingBaseAPIManager.m in Sources */,
+				F9F1F9301B9C90DB0052D17C /* CXCommonParamsGenerator.m in Sources */,
 				F97CEF5F1B916BF700621D33 /* AppDelegate.m in Sources */,
-				F97CEFB61B91ED3300621D33 /* CXCommonParamsGenerator.m in Sources */,
-				F97CEFAD1B91DB7C00621D33 /* CXRequestGenerator.m in Sources */,
 				F97CEF991B916D7700621D33 /* AFHTTPRequestOperationManager.m in Sources */,
 				F97CEFBC1B91EE3500621D33 /* NSArray+CXNetworkingMethods.m in Sources */,
+				F9F1F9161B9C70640052D17C /* TeHuiAPIManager.m in Sources */,
 				F97CEF9D1B916D7700621D33 /* AFURLConnectionOperation.m in Sources */,
+				F9F1F9351B9C90DB0052D17C /* CXService.m in Sources */,
 				F97CEF981B916D7700621D33 /* AFHTTPRequestOperation.m in Sources */,
-				F97CEFB31B91DF5A00621D33 /* CXRequestContext.m in Sources */,
+				F9F1F9311B9C90DB0052D17C /* CXNetworkingBaseAPIManager.m in Sources */,
 				F97CEFB91B91EE1F00621D33 /* NSDictionary+CXNetworkingMethods.m in Sources */,
-				F97CEFBF1B91FCAD00621D33 /* CXService.m in Sources */,
-				F97CEF821B916D3500621D33 /* CXApiProxy.m in Sources */,
+				F9F1F9321B9C90DB0052D17C /* CXNetworkingConfiguration.m in Sources */,
+				F9F1F9191B9C74380052D17C /* VCTools.m in Sources */,
+				F9F1F98E1B9DE21C0052D17C /* CXCoreRequest.m in Sources */,
 				F97CEF9E1B916D7700621D33 /* AFURLRequestSerialization.m in Sources */,
 				F97CEF9A1B916D7700621D33 /* AFHTTPSessionManager.m in Sources */,
-				F97CEFA31B916E1D00621D33 /* CXURLResponse.m in Sources */,
+				F9F1F9131B9C70000052D17C /* ViewController.m in Sources */,
 				F97CEF9B1B916D7700621D33 /* AFNetworkReachabilityManager.m in Sources */,
+				F9F1F98B1B9DE1D30052D17C /* CXCoreProxy.m in Sources */,
+				F9F1F92F1B9C90DB0052D17C /* CXApiProxy.m in Sources */,
+				F9F1F9341B9C90DB0052D17C /* CXRequestGenerator.m in Sources */,
 				F97CEFAA1B91A56F00621D33 /* NSURLRequest+CXNetworkingMethods.m in Sources */,
+				F9F1F9361B9C90DB0052D17C /* CXURLResponse.m in Sources */,
 				F97CEF9F1B916D7700621D33 /* AFURLResponseSerialization.m in Sources */,
 				F97CEFA01B916D7700621D33 /* AFURLSessionManager.m in Sources */,
 				F97CEF5C1B916BF700621D33 /* main.m in Sources */,
+				F9F1F9911B9E8C190052D17C /* CXCoreService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,14 +492,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F97CEF631B916BF700621D33 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F97CEF641B916BF700621D33 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F97CEF681B916BF700621D33 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
