@@ -8,6 +8,8 @@
 
 #import "CXCoreRequest.h"
 #import "AFNetworking.h"
+#import "CXCoreService.h"
+#import "CXServiceFactory.h"
 
 static NSTimeInterval const kTimeoutSeconds = 30.0f;
 static NSString * const kGETRequestMethod = @"GET";
@@ -37,6 +39,7 @@ static NSString * const kPOSTRequestMethod = @"POST";
     if (HTTPMethod == CXNetWorkingHTTPMethodTypeGET) {
         // URLString = baseURL+methodName+paramString
         // ==> CXCoreService（baseURL） + CXCoreProxy（外部提供接口） + CXCoreContext(基本参数) + param(外部提供附加参数)
+        CXCoreService *service = [[CXServiceFactory shareManager] serviceWithNetWorkingServiceType:serviceType];
         NSString *URLString = nil;
         NSMutableURLRequest *request = [self.httpRequestSerializer requestWithMethod:kGETRequestMethod URLString:URLString parameters:nil error:NULL];
     } else if (HTTPMethod == CXNetWorkingHTTPMethodTypePOST) {

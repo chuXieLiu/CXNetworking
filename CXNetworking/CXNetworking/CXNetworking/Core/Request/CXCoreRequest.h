@@ -7,10 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-typedef enum : NSUInteger {
-    CXNetWorkingServiceTypeDefault  // 默认service，-》默认的baseURL
-} CXNetWorkingServiceType;
+#import "CXServiceFactory.h"
 
 typedef enum : NSUInteger {
     CXNetWorkingHTTPMethodTypeGET,

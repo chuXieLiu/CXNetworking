@@ -24,6 +24,9 @@
 		F97CEFAA1B91A56F00621D33 /* NSURLRequest+CXNetworkingMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEFA91B91A56F00621D33 /* NSURLRequest+CXNetworkingMethods.m */; };
 		F97CEFB91B91EE1F00621D33 /* NSDictionary+CXNetworkingMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEFB81B91EE1F00621D33 /* NSDictionary+CXNetworkingMethods.m */; };
 		F97CEFBC1B91EE3500621D33 /* NSArray+CXNetworkingMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = F97CEFBB1B91EE3500621D33 /* NSArray+CXNetworkingMethods.m */; };
+		F9A3979B1BA70ED30030BD19 /* CXServiceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A3979A1BA70ED30030BD19 /* CXServiceFactory.m */; };
+		F9A3979E1BA71A160030BD19 /* CXCoreContext.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A3979D1BA71A160030BD19 /* CXCoreContext.m */; };
+		F9A397A21BA722890030BD19 /* CXAppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A397A11BA722890030BD19 /* CXAppUtils.m */; };
 		F9F1F9121B9C70000052D17C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F1F90F1B9C70000052D17C /* Main.storyboard */; };
 		F9F1F9131B9C70000052D17C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F9111B9C70000052D17C /* ViewController.m */; };
 		F9F1F9161B9C70640052D17C /* TeHuiAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F9151B9C70640052D17C /* TeHuiAPIManager.m */; };
@@ -39,6 +42,8 @@
 		F9F1F98B1B9DE1D30052D17C /* CXCoreProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F9871B9DE1D30052D17C /* CXCoreProxy.m */; };
 		F9F1F98E1B9DE21C0052D17C /* CXCoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F98D1B9DE21C0052D17C /* CXCoreRequest.m */; };
 		F9F1F9911B9E8C190052D17C /* CXCoreService.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F9901B9E8C190052D17C /* CXCoreService.m */; };
+		F9F1FA111BA154020052D17C /* CXDefaultService.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1FA101BA154020052D17C /* CXDefaultService.m */; };
+		F9F1FA141BA154E90052D17C /* CXTeHuiService.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1FA131BA154E90052D17C /* CXTeHuiService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +92,12 @@
 		F97CEFB81B91EE1F00621D33 /* NSDictionary+CXNetworkingMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+CXNetworkingMethods.m"; sourceTree = "<group>"; };
 		F97CEFBA1B91EE3500621D33 /* NSArray+CXNetworkingMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CXNetworkingMethods.h"; sourceTree = "<group>"; };
 		F97CEFBB1B91EE3500621D33 /* NSArray+CXNetworkingMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CXNetworkingMethods.m"; sourceTree = "<group>"; };
+		F9A397991BA70ED30030BD19 /* CXServiceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXServiceFactory.h; sourceTree = "<group>"; };
+		F9A3979A1BA70ED30030BD19 /* CXServiceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXServiceFactory.m; sourceTree = "<group>"; };
+		F9A3979C1BA71A160030BD19 /* CXCoreContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXCoreContext.h; sourceTree = "<group>"; };
+		F9A3979D1BA71A160030BD19 /* CXCoreContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXCoreContext.m; sourceTree = "<group>"; };
+		F9A397A01BA722890030BD19 /* CXAppUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXAppUtils.h; sourceTree = "<group>"; };
+		F9A397A11BA722890030BD19 /* CXAppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXAppUtils.m; sourceTree = "<group>"; };
 		F9F1F90F1B9C70000052D17C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F9F1F9101B9C70000052D17C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F9F1F9111B9C70000052D17C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -116,6 +127,10 @@
 		F9F1F98D1B9DE21C0052D17C /* CXCoreRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXCoreRequest.m; sourceTree = "<group>"; };
 		F9F1F98F1B9E8C190052D17C /* CXCoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXCoreService.h; sourceTree = "<group>"; };
 		F9F1F9901B9E8C190052D17C /* CXCoreService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXCoreService.m; sourceTree = "<group>"; };
+		F9F1FA0F1BA154020052D17C /* CXDefaultService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXDefaultService.h; sourceTree = "<group>"; };
+		F9F1FA101BA154020052D17C /* CXDefaultService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXDefaultService.m; sourceTree = "<group>"; };
+		F9F1FA121BA154E90052D17C /* CXTeHuiService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXTeHuiService.h; sourceTree = "<group>"; };
+		F9F1FA131BA154E90052D17C /* CXTeHuiService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXTeHuiService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +267,16 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		F9A3979F1BA7217B0030BD19 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				F9A397A01BA722890030BD19 /* CXAppUtils.h */,
+				F9A397A11BA722890030BD19 /* CXAppUtils.m */,
+			);
+			name = Tools;
+			path = Service/Tools;
+			sourceTree = "<group>";
+		};
 		F9F1F90E1B9C70000052D17C /* Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +299,7 @@
 				F9F1F9881B9DE1D30052D17C /* Request */,
 				F9F1F9891B9DE1D30052D17C /* Response */,
 				F9F1F98A1B9DE1D30052D17C /* Service */,
+				F9A3979F1BA7217B0030BD19 /* Tools */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -304,6 +330,8 @@
 		F9F1F9841B9DE1D30052D17C /* Context */ = {
 			isa = PBXGroup;
 			children = (
+				F9A3979C1BA71A160030BD19 /* CXCoreContext.h */,
+				F9A3979D1BA71A160030BD19 /* CXCoreContext.m */,
 			);
 			path = Context;
 			sourceTree = "<group>";
@@ -338,6 +366,12 @@
 			children = (
 				F9F1F98F1B9E8C190052D17C /* CXCoreService.h */,
 				F9F1F9901B9E8C190052D17C /* CXCoreService.m */,
+				F9F1FA0F1BA154020052D17C /* CXDefaultService.h */,
+				F9F1FA101BA154020052D17C /* CXDefaultService.m */,
+				F9F1FA121BA154E90052D17C /* CXTeHuiService.h */,
+				F9F1FA131BA154E90052D17C /* CXTeHuiService.m */,
+				F9A397991BA70ED30030BD19 /* CXServiceFactory.h */,
+				F9A3979A1BA70ED30030BD19 /* CXServiceFactory.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -455,10 +489,14 @@
 				F9F1F9311B9C90DB0052D17C /* CXNetworkingBaseAPIManager.m in Sources */,
 				F97CEFB91B91EE1F00621D33 /* NSDictionary+CXNetworkingMethods.m in Sources */,
 				F9F1F9321B9C90DB0052D17C /* CXNetworkingConfiguration.m in Sources */,
+				F9A397A21BA722890030BD19 /* CXAppUtils.m in Sources */,
 				F9F1F9191B9C74380052D17C /* VCTools.m in Sources */,
+				F9F1FA141BA154E90052D17C /* CXTeHuiService.m in Sources */,
+				F9F1FA111BA154020052D17C /* CXDefaultService.m in Sources */,
 				F9F1F98E1B9DE21C0052D17C /* CXCoreRequest.m in Sources */,
 				F97CEF9E1B916D7700621D33 /* AFURLRequestSerialization.m in Sources */,
 				F97CEF9A1B916D7700621D33 /* AFHTTPSessionManager.m in Sources */,
+				F9A3979E1BA71A160030BD19 /* CXCoreContext.m in Sources */,
 				F9F1F9131B9C70000052D17C /* ViewController.m in Sources */,
 				F97CEF9B1B916D7700621D33 /* AFNetworkReachabilityManager.m in Sources */,
 				F9F1F98B1B9DE1D30052D17C /* CXCoreProxy.m in Sources */,
@@ -470,6 +508,7 @@
 				F97CEFA01B916D7700621D33 /* AFURLSessionManager.m in Sources */,
 				F97CEF5C1B916BF700621D33 /* main.m in Sources */,
 				F9F1F9911B9E8C190052D17C /* CXCoreService.m in Sources */,
+				F9A3979B1BA70ED30030BD19 /* CXServiceFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
