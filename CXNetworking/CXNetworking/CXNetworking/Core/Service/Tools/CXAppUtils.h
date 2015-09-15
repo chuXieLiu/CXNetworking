@@ -6,10 +6,11 @@
 //  Copyright (c) 2015年 c_xie. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface CXAppUtils : NSObject
 
-
++ (NSString *)generateTermcode;
++ (NSString *)md5:(NSString *)inputString;
 
 @end

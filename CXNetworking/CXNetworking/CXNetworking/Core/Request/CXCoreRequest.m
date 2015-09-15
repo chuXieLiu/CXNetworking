@@ -10,6 +10,9 @@
 #import "AFNetworking.h"
 #import "CXCoreService.h"
 #import "CXServiceFactory.h"
+#import "CXSignatureGenerater.h"
+#import "CXCommonParamsGenerater.h"
+#import "NSDictionary+Request.h"
 
 static NSTimeInterval const kTimeoutSeconds = 30.0f;
 static NSString * const kGETRequestMethod = @"GET";
@@ -37,11 +40,14 @@ static NSString * const kPOSTRequestMethod = @"POST";
 - (NSURLRequest *)generateRequestWithServiceType:(CXNetWorkingServiceType)serviceType HTTPMethod:(CXNetWorkingHTTPMethodType)HTTPMethod methodName:(NSString *)methodName params:(NSDictionary *)params
 {
     if (HTTPMethod == CXNetWorkingHTTPMethodTypeGET) {
-        // URLString = baseURL+methodName+paramString
-        // ==> CXCoreService（baseURL） + CXCoreProxy（外部提供接口） + CXCoreContext(基本参数) + param(外部提供附加参数)
         CXCoreService *service = [[CXServiceFactory shareManager] serviceWithNetWorkingServiceType:serviceType];
-        NSString *URLString = nil;
+        NSString *signature = [CXSignatureGenerater signatureWithSigParams:params MethodName:methodName];
+        NSMutableDictionary *requestParams = [NSMutableDictionary dictionaryWithDictionary:params];
+        [requestParams addEntriesFromDictionary:[CXCommonParamsGenerater commonParamsDictionary]];
+        NSString *URLString = [NSString stringWithFormat:@"%@%@?sign=%@&%@",service.apiBaseURL,methodName,signature,[requestParams paramsString]];
+        NSLog(@"URLString=%@",URLString);
         NSMutableURLRequest *request = [self.httpRequestSerializer requestWithMethod:kGETRequestMethod URLString:URLString parameters:nil error:NULL];
+        return request.copy;
     } else if (HTTPMethod == CXNetWorkingHTTPMethodTypePOST) {
         
     }

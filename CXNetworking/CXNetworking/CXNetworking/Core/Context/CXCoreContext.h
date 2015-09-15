@@ -12,7 +12,6 @@
 
 @property (nonatomic,copy,readonly) NSString *v;
 @property (nonatomic,copy,readonly) NSString *t;
-@property (nonatomic,copy,readonly) NSString *sign;
 @property (nonatomic,copy,readonly) NSString *deviceid;
 @property (nonatomic,copy,readonly) NSString *appid;
 @property (nonatomic,copy,readonly) NSString *termcode;
@@ -22,5 +21,8 @@
 @property (nonatomic,copy,readonly) NSString *city;
 @property (nonatomic,copy,readonly) NSString *poi;
 @property (nonatomic,copy,readonly) NSString *role;
+
++ (instancetype)shareManger;
+
 
 @end
