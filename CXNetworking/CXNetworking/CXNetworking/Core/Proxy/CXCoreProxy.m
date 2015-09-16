@@ -8,6 +8,8 @@
 
 #import "CXCoreProxy.h"
 #import "AFNetworking.h"
+#import "CXCoreResponse.h"
+#import "NSURLRequest+Extension.h"
 
 
 @interface CXCoreProxy ()
@@ -33,15 +35,16 @@
     return instance;
 }
 
-- (NSNumber *)invokeGetNetworingWithServiceType:(CXNetWorkingServiceType)serviceType methodName:(NSString *)methodName params:(NSDictionary *)params
+- (NSNumber *)invokeGetNetworingWithServiceType:(CXNetWorkingServiceType)serviceType methodName:(NSString *)methodName params:(NSDictionary *)params result:(CXNetWorkingResultCallBlock)resultCallBlock
 {
     NSURLRequest *request = [[CXCoreRequest shareManager] generateRequestWithServiceType:serviceType HTTPMethod:CXNetWorkingHTTPMethodTypeGET methodName:methodName params:params];
-    return [self invokeNetworkingWithRequest:request];
+    return [self invokeNetworkingWithRequest:request result:resultCallBlock];
 }
 
 #pragma mark - private method
 
-- (NSNumber *)invokeNetworkingWithRequest:(NSURLRequest *)request
+- (NSNumber *)invokeNetworkingWithRequest:(NSURLRequest *)request result:(CXNetWorkingResultCallBlock)resultCallBlock
+
 {
     NSNumber *requestID = [self generateRequestID];
     AFHTTPRequestOperation *requestOperation = [self.operationManager HTTPRequestOperationWithRequest:request success:^ void(AFHTTPRequestOperation * operation, id responseObject) {
@@ -51,16 +54,11 @@
         } else {
             [self.operationCollection removeObjectForKey:requestID];
         }
-        /*
-         CXURLResponse *response = [[CXURLResponse alloc] initWithRequestID:requestID
-         request:operation.request
-         responseString:operation.responseString
-         responseData:operation.responseData
-         responseStatus:CXURLResponseStatusTypeSuccess];
-         */
-        NSLog(@"%@",operation.responseString);
-        
-        
+        NSURLRequest *request = operation.request;
+        CXCoreResponse *response = [CXCoreResponse responseWithRequestID:requestID requestURL:request.requestURL requestParams:request.requestParams responseString:operation.responseString responsedata:response.responsedata responseObject:responseObject error:nil];
+        if (resultCallBlock) {
+            resultCallBlock(response);
+        }
     } failure:^ void(AFHTTPRequestOperation * operation, NSError * error) {
         AFHTTPRequestOperation *storeOperation = self.operationCollection[requestID];
         if (storeOperation == nil) { // being cacel
@@ -68,13 +66,26 @@
         } else {
             [self.operationCollection removeObjectForKey:requestID];
         }
-        NSLog(@"%@",operation.responseString);
-        NSLog(@"%zd",operation.error.code);
-        NSLog(@"%@",operation.error.userInfo);
+        NSURLRequest *request = operation.request;
+        CXCoreResponse *response = [CXCoreResponse responseWithRequestID:requestID requestURL:request.requestURL requestParams:request.requestParams responseString:operation.responseString responsedata:response.responsedata responseObject:operation.responseObject error:error];
+        if (resultCallBlock) {
+            resultCallBlock(response);
+        }
     }];
     [self.operationCollection setObject:requestOperation forKey:requestID];
     [self.operationManager.operationQueue addOperation:requestOperation];// 开始执行操作
     return requestID;
+}
+
+
+- (void)cancelRequestWithID:(NSNumber *)requestID
+{
+    NSOperation *operation = self.operationCollection[requestID];
+    if (operation == nil) {
+        return;
+    }
+    [operation cancel];
+    [self.operationCollection removeObjectForKey:operation];
 }
 
 
