@@ -51,7 +51,16 @@
         } else {
             [self.operationCollection removeObjectForKey:requestID];
         }
-        NSLog(@"%@",responseObject);
+        /*
+         CXURLResponse *response = [[CXURLResponse alloc] initWithRequestID:requestID
+         request:operation.request
+         responseString:operation.responseString
+         responseData:operation.responseData
+         responseStatus:CXURLResponseStatusTypeSuccess];
+         */
+        NSLog(@"%@",operation.responseString);
+        
+        
     } failure:^ void(AFHTTPRequestOperation * operation, NSError * error) {
         AFHTTPRequestOperation *storeOperation = self.operationCollection[requestID];
         if (storeOperation == nil) { // being cacel
@@ -59,6 +68,9 @@
         } else {
             [self.operationCollection removeObjectForKey:requestID];
         }
+        NSLog(@"%@",operation.responseString);
+        NSLog(@"%zd",operation.error.code);
+        NSLog(@"%@",operation.error.userInfo);
     }];
     [self.operationCollection setObject:requestOperation forKey:requestID];
     [self.operationManager.operationQueue addOperation:requestOperation];// 开始执行操作

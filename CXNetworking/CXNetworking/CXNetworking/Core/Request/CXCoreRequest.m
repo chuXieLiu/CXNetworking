@@ -13,6 +13,7 @@
 #import "CXSignatureGenerater.h"
 #import "CXCommonParamsGenerater.h"
 #import "NSDictionary+Request.h"
+#import "NSURLRequest+Extension.h"
 
 static NSTimeInterval const kTimeoutSeconds = 30.0f;
 static NSString * const kGETRequestMethod = @"GET";
@@ -50,6 +51,8 @@ static NSString * const kPOSTRequestMethod = @"POST";
         NSLog(@"URLString=%@",URLString);
         NSMutableURLRequest *request = [self.httpRequestSerializer requestWithMethod:kGETRequestMethod URLString:URLString parameters:nil error:NULL];
         request.timeoutInterval = kTimeoutSeconds;
+        request.requestParams = requestParams;      // 绑定的参数字典不带签名
+        request.requestURL = URLString;
         return request.copy;
     } else if (HTTPMethod == CXNetWorkingHTTPMethodTypePOST) {
         

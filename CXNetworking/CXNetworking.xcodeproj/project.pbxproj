@@ -33,6 +33,7 @@
 		F9A397B11BA8193E0030BD19 /* NSDictionary+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A397B01BA8193E0030BD19 /* NSDictionary+Request.m */; };
 		F9A397B41BA81DEC0030BD19 /* NSArray+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A397B31BA81DEC0030BD19 /* NSArray+Request.m */; };
 		F9A397B71BA847B10030BD19 /* CXCoreResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A397B61BA847B10030BD19 /* CXCoreResponse.m */; };
+		F9BC6D631BA95CC7002569A3 /* NSURLRequest+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F9BC6D621BA95CC7002569A3 /* NSURLRequest+Extension.m */; };
 		F9F1F9121B9C70000052D17C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F1F90F1B9C70000052D17C /* Main.storyboard */; };
 		F9F1F9131B9C70000052D17C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F9111B9C70000052D17C /* ViewController.m */; };
 		F9F1F9161B9C70640052D17C /* TeHuiAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F1F9151B9C70640052D17C /* TeHuiAPIManager.m */; };
@@ -116,6 +117,8 @@
 		F9A397B31BA81DEC0030BD19 /* NSArray+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Request.m"; sourceTree = "<group>"; };
 		F9A397B51BA847B10030BD19 /* CXCoreResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXCoreResponse.h; sourceTree = "<group>"; };
 		F9A397B61BA847B10030BD19 /* CXCoreResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXCoreResponse.m; sourceTree = "<group>"; };
+		F9BC6D611BA95CC7002569A3 /* NSURLRequest+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+Extension.h"; sourceTree = "<group>"; };
+		F9BC6D621BA95CC7002569A3 /* NSURLRequest+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+Extension.m"; sourceTree = "<group>"; };
 		F9F1F90F1B9C70000052D17C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F9F1F9101B9C70000052D17C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F9F1F9111B9C70000052D17C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -378,6 +381,8 @@
 			children = (
 				F9F1F98C1B9DE21C0052D17C /* CXCoreRequest.h */,
 				F9F1F98D1B9DE21C0052D17C /* CXCoreRequest.m */,
+				F9BC6D611BA95CC7002569A3 /* NSURLRequest+Extension.h */,
+				F9BC6D621BA95CC7002569A3 /* NSURLRequest+Extension.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -513,6 +518,7 @@
 				F9F1F9301B9C90DB0052D17C /* CXCommonParamsGenerator.m in Sources */,
 				F9A397B71BA847B10030BD19 /* CXCoreResponse.m in Sources */,
 				F97CEF5F1B916BF700621D33 /* AppDelegate.m in Sources */,
+				F9BC6D631BA95CC7002569A3 /* NSURLRequest+Extension.m in Sources */,
 				F97CEF991B916D7700621D33 /* AFHTTPRequestOperationManager.m in Sources */,
 				F9A397AE1BA8149B0030BD19 /* CXCommonParamsGenerater.m in Sources */,
 				F9A397B41BA81DEC0030BD19 /* NSArray+Request.m in Sources */,

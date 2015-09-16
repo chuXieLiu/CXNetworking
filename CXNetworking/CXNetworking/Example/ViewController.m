@@ -29,7 +29,7 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [[CXCoreProxy shareManager] invokeGetNetworingWithServiceType:CXNetWorkingServiceTypeTeHui methodName:@"special/type" params:nil];
+    [[CXCoreProxy shareManager] invokeGetNetworingWithServiceType:CXNetWorkingServiceTypeTeHui methodName:@"specia/type" params:nil];
 }
 
 
