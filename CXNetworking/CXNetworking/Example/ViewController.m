@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CXCoreProxy.h"
+#import "CXUserDefaults.h"
 
 @interface ViewController ()
 
@@ -18,12 +19,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    [CXUserDefaults setObject:@"6831" forKey:kAppUidStringKey];
+    [CXUserDefaults setObject:@"57ksmtk8up4me85c4u3d0a5t95" forKey:kAppSidStringKey];
+    [CXUserDefaults setObject:@"15920428067" forKey:kAppUserStringKey];
+    [CXUserDefaults setObject:@"deb64e86bb631640e8ee473144abbd31e993991f1a36e68cb75126988d0db715" forKey:kAppDeviceTokenStringKey];
+    [CXUserDefaults setObject:@"广州市" forKey:kAppCityStringKey];
+    [CXUserDefaults setObject:@"113.328681,23.130497" forKey:kAppPoiStringkey];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [[CXCoreProxy shareManager] getWithURLString:@"http://c.m.163.com/nc/article/headline/T1348647853363/0-140.html"];
+    [[CXCoreProxy shareManager] invokeGetNetworingWithServiceType:CXNetWorkingServiceTypeTeHui methodName:@"special/type" params:nil];
 }
 
 

@@ -84,7 +84,7 @@
 - (NSString *)termcode
 {
     if (_termcode == nil) {
-        [CXAppUtils generateTermcode];
+        _termcode = [CXAppUtils generateTermcode];
     }
     return _termcode;
 }
@@ -120,7 +120,7 @@
 
 - (NSString *)poi
 {
-    return [CXUserDefaults stringForKey:kAppCityStringKey];
+    return [CXUserDefaults stringForKey:kAppPoiStringkey];
 }
 
 - (NSString *)role

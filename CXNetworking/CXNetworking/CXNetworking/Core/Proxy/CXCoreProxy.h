@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CXCoreRequest.h"
 
 @interface CXCoreProxy : NSObject
 
 + (instancetype)shareManager;
-- (NSNumber *)getWithURLString:(NSString *)URLString;
+- (NSNumber *)invokeGetNetworingWithServiceType:(CXNetWorkingServiceType)serviceType methodName:(NSString *)methodName params:(NSDictionary *)params;
 
 @end

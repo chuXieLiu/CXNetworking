@@ -14,6 +14,7 @@
 + (NSDictionary *)commonParamsDictionary
 {
     CXCoreContext *context = [CXCoreContext shareManger];
+    NSLog(@"%@",context.termcode);
     return @{
              @"v"        : context.v,
              @"t"        : context.t,

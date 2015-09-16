@@ -26,7 +26,7 @@
             value = [NSString stringWithFormat:@"%@",value];
         }
         // 对参数中的特殊字符!*'();:@&;=+$,/?%#[]进行转义
-        value = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)value, NULL, (CFStringRef)@"!*'();:@&;=+$,/?%#[]", kCFStringEncodingUTF8));
+        value = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)value, NULL, (CFStringRef)@"!*'();:@&;=+$/?%#[]", kCFStringEncodingUTF8));
         if ([value length] > 0) {
             [result addObject:[NSString stringWithFormat:@"%@=%@",key,value]];
         }

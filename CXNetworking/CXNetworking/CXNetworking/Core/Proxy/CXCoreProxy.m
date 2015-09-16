@@ -9,6 +9,7 @@
 #import "CXCoreProxy.h"
 #import "AFNetworking.h"
 
+
 @interface CXCoreProxy ()
 
 @property (nonatomic,strong) AFHTTPRequestOperationManager *operationManager;
@@ -20,6 +21,8 @@
 
 @implementation CXCoreProxy
 
+#pragma mark - public method
+
 + (instancetype)shareManager
 {
     static CXCoreProxy *instance;
@@ -30,13 +33,13 @@
     return instance;
 }
 
-- (NSNumber *)getWithURLString:(NSString *)URLString
+- (NSNumber *)invokeGetNetworingWithServiceType:(CXNetWorkingServiceType)serviceType methodName:(NSString *)methodName params:(NSDictionary *)params
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URLString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
-    request.HTTPMethod = @"GET";
+    NSURLRequest *request = [[CXCoreRequest shareManager] generateRequestWithServiceType:serviceType HTTPMethod:CXNetWorkingHTTPMethodTypeGET methodName:methodName params:params];
     return [self invokeNetworkingWithRequest:request];
 }
 
+#pragma mark - private method
 
 - (NSNumber *)invokeNetworkingWithRequest:(NSURLRequest *)request
 {
@@ -48,7 +51,7 @@
         } else {
             [self.operationCollection removeObjectForKey:requestID];
         }
-        
+        NSLog(@"%@",responseObject);
     } failure:^ void(AFHTTPRequestOperation * operation, NSError * error) {
         AFHTTPRequestOperation *storeOperation = self.operationCollection[requestID];
         if (storeOperation == nil) { // being cacel
@@ -63,7 +66,7 @@
 }
 
 
-#pragma mark - setter getter
+#pragma mark - getter
 
 - (AFHTTPRequestOperationManager *)operationManager
 {

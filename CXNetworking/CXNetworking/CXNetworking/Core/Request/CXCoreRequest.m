@@ -42,11 +42,14 @@ static NSString * const kPOSTRequestMethod = @"POST";
     if (HTTPMethod == CXNetWorkingHTTPMethodTypeGET) {
         CXCoreService *service = [[CXServiceFactory shareManager] serviceWithNetWorkingServiceType:serviceType];
         NSString *signature = [CXSignatureGenerater signatureWithSigParams:params MethodName:methodName];
-        NSMutableDictionary *requestParams = [NSMutableDictionary dictionaryWithDictionary:params];
-        [requestParams addEntriesFromDictionary:[CXCommonParamsGenerater commonParamsDictionary]];
+        NSMutableDictionary *requestParams = [NSMutableDictionary dictionaryWithDictionary:[CXCommonParamsGenerater commonParamsDictionary]];
+        if (params != nil && params.count > 0) {
+            [requestParams addEntriesFromDictionary:params];
+        }
         NSString *URLString = [NSString stringWithFormat:@"%@%@?sign=%@&%@",service.apiBaseURL,methodName,signature,[requestParams paramsString]];
         NSLog(@"URLString=%@",URLString);
         NSMutableURLRequest *request = [self.httpRequestSerializer requestWithMethod:kGETRequestMethod URLString:URLString parameters:nil error:NULL];
+        request.timeoutInterval = kTimeoutSeconds;
         return request.copy;
     } else if (HTTPMethod == CXNetWorkingHTTPMethodTypePOST) {
         
