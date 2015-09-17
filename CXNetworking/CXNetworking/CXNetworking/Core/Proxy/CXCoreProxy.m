@@ -37,7 +37,7 @@
 
 - (NSNumber *)invokeGetNetworingWithServiceType:(CXNetWorkingServiceType)serviceType methodName:(NSString *)methodName params:(NSDictionary *)params result:(CXNetWorkingResultCallBlock)resultCallBlock
 {
-    NSURLRequest *request = [[CXCoreRequest shareManager] generateRequestWithServiceType:serviceType HTTPMethod:CXNetWorkingHTTPMethodTypeGET methodName:methodName params:params];
+    NSURLRequest *request = [[CXCoreRequest shareManager] generateRequestWithServiceType:serviceType HTTPMethod:CXNetWorkingHTTPRequestTypeGET methodName:methodName params:params];
     return [self invokeNetworkingWithRequest:request result:resultCallBlock];
 }
 
@@ -54,8 +54,9 @@
         } else {
             [self.operationCollection removeObjectForKey:requestID];
         }
+        
         NSURLRequest *request = operation.request;
-        CXCoreResponse *response = [CXCoreResponse responseWithRequestID:requestID requestURL:request.requestURL requestParams:request.requestParams responseString:operation.responseString responsedata:response.responsedata responseObject:responseObject error:nil];
+        CXCoreResponse *response = [CXCoreResponse responseWithRequestID:requestID requestURL:request.requestURL requestParams:request.requestParams responseString:operation.responseString responseData:operation.responseData responseObject:responseObject error:nil];
         if (resultCallBlock) {
             resultCallBlock(response);
         }
@@ -67,7 +68,7 @@
             [self.operationCollection removeObjectForKey:requestID];
         }
         NSURLRequest *request = operation.request;
-        CXCoreResponse *response = [CXCoreResponse responseWithRequestID:requestID requestURL:request.requestURL requestParams:request.requestParams responseString:operation.responseString responsedata:response.responsedata responseObject:operation.responseObject error:error];
+        CXCoreResponse *response = [CXCoreResponse responseWithRequestID:requestID requestURL:request.requestURL requestParams:request.requestParams responseString:operation.responseString responseData:operation.responseData responseObject:operation.responseObject error:error];
         if (resultCallBlock) {
             resultCallBlock(response);
         }

@@ -15,7 +15,7 @@
 @property (nonatomic,copy,readwrite) NSString *requestURL;
 @property (nonatomic,strong,readwrite) NSDictionary *requestParams;
 @property (nonatomic,copy,readwrite) NSString *responseString;
-@property (nonatomic,strong,readwrite) NSData *responsedata;
+@property (nonatomic,strong,readwrite) NSData *responseData;
 @property (nonatomic,strong,readwrite) id responseObject;
 
 @end
@@ -26,7 +26,7 @@
                             requestURL:(NSString *)requestURL
                          requestParams:(NSDictionary *)requestParams
                         responseString:(NSString *)responseString
-                          responsedata:(NSData *)responsedata
+                          responseData:(NSData *)responseData
                         responseObject:(id)responseObject
                                  error:(NSError *)error
 {
@@ -36,7 +36,7 @@
     response.requestURL = requestURL;
     response.requestParams = requestParams;
     response.responseString = responseString;
-    response.responsedata = responsedata;
+    response.responseData = responseData;
     response.responseObject = responseObject;
     return response;
 }

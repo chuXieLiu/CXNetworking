@@ -38,9 +38,9 @@ static NSString * const kPOSTRequestMethod = @"POST";
 }
 
 
-- (NSURLRequest *)generateRequestWithServiceType:(CXNetWorkingServiceType)serviceType HTTPMethod:(CXNetWorkingHTTPMethodType)HTTPMethod methodName:(NSString *)methodName params:(NSDictionary *)params
+- (NSURLRequest *)generateRequestWithServiceType:(CXNetWorkingServiceType)serviceType HTTPMethod:(CXNetWorkingHTTPRequestType)HTTPMethod methodName:(NSString *)methodName params:(NSDictionary *)params
 {
-    if (HTTPMethod == CXNetWorkingHTTPMethodTypeGET) {
+    if (HTTPMethod == CXNetWorkingHTTPRequestTypeGET) {
         CXCoreService *service = [[CXServiceFactory shareManager] serviceWithNetWorkingServiceType:serviceType];
         NSString *signature = [CXSignatureGenerater signatureWithSigParams:params MethodName:methodName];
         NSMutableDictionary *requestParams = [NSMutableDictionary dictionaryWithDictionary:[CXCommonParamsGenerater commonParamsDictionary]];
@@ -54,7 +54,7 @@ static NSString * const kPOSTRequestMethod = @"POST";
         request.requestParams = requestParams;      // 绑定的参数字典不带签名
         request.requestURL = URLString;
         return request.copy;
-    } else if (HTTPMethod == CXNetWorkingHTTPMethodTypePOST) {
+    } else if (HTTPMethod == CXNetWorkingHTTPRequestTypePOST) {
         
     }
     return nil;

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "VCTools.h"
+#import "AFNetworking.h"
 
 @interface AppDelegate ()
 
@@ -17,14 +18,25 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    [self setupAFNetworking];
     return YES;
 }
+
+
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     
 }
 
+
+#pragma mark - private method 
+
+- (void)setupAFNetworking
+{
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    NSURLCache *cache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024 diskCapacity:20 * 1024 * 1024 diskPath:nil];
+    [NSURLCache setSharedURLCache:cache];
+}
 
 @end

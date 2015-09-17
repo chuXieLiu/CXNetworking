@@ -7,13 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CXNetworkingConst.h"
 @class CXCoreService;
 @protocol CXCoreServiceProtocol;
-
-typedef enum : NSUInteger {
-    CXNetWorkingServiceTypeTeHui,
-    CXNetWorkingServiceTypeDefault  // 默认service，-》默认的baseURL
-} CXNetWorkingServiceType;
 
 @interface CXServiceFactory : NSObject
 

@@ -7,12 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CXServiceFactory.h"
-
-typedef enum : NSUInteger {
-    CXNetWorkingHTTPMethodTypeGET,
-    CXNetWorkingHTTPMethodTypePOST
-} CXNetWorkingHTTPMethodType;
+#import "CXNetworkingConst.h"
 
 @interface CXCoreRequest : NSObject
 
@@ -28,6 +23,6 @@ typedef enum : NSUInteger {
  *
  *  @return NSURLRequest对象
  */
-- (NSURLRequest *)generateRequestWithServiceType:(CXNetWorkingServiceType)serviceType HTTPMethod:(CXNetWorkingHTTPMethodType)HTTPMethod methodName:(NSString *)methodName params:(NSDictionary *)params;
+- (NSURLRequest *)generateRequestWithServiceType:(CXNetWorkingServiceType)serviceType HTTPMethod:(CXNetWorkingHTTPRequestType)HTTPMethod methodName:(NSString *)methodName params:(NSDictionary *)params;
 
 @end

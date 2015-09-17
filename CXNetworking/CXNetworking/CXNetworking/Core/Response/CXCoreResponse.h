@@ -7,16 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-
 /*
  除了超时以外的错误，都以无网络处理
  */
-
 typedef NS_ENUM(NSUInteger, CXCoreResponseStautsType) {
     CXCoreResponseStautsTypeSuccess,
     CXCoreResponseStautsTypeTimeOut,
     CXCoreResponseStautsTypeNoNetwork
-} ;
+};
 
 @interface CXCoreResponse : NSObject
 
@@ -25,14 +23,14 @@ typedef NS_ENUM(NSUInteger, CXCoreResponseStautsType) {
 @property (nonatomic,copy,readonly) NSString *requestURL;
 @property (nonatomic,strong,readonly) NSDictionary *requestParams;
 @property (nonatomic,copy,readonly) NSString *responseString;
-@property (nonatomic,strong,readonly) NSData *responsedata;
+@property (nonatomic,strong,readonly) NSData *responseData;
 @property (nonatomic,strong,readonly) id responseObject;
 
 + (instancetype)responseWithRequestID:(NSNumber *)requestID
                             requestURL:(NSString *)requestURL
                          requestParams:(NSDictionary *)requestParams
                         responseString:(NSString *)responseString
-                          responsedata:(NSData *)responsedata
+                          responseData:(NSData *)responseData
                         responseObject:(id)responseObject
                                  error:(NSError *)error;
 
