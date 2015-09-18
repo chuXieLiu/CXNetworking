@@ -12,7 +12,7 @@
  */
 typedef enum : NSUInteger {
     CXNetWorkingServiceTypeTeHui,
-    CXNetWorkingServiceTypeDefault  // 默认service，-》默认的baseURL
+    CXNetWorkingServiceTypeDefault  // 默认service，->默认的baseURL
 } CXNetWorkingServiceType;
 
 

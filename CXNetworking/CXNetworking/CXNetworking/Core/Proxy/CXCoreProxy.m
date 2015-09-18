@@ -54,7 +54,6 @@
         } else {
             [self.operationCollection removeObjectForKey:requestID];
         }
-        
         NSURLRequest *request = operation.request;
         CXCoreResponse *response = [CXCoreResponse responseWithRequestID:requestID requestURL:request.requestURL requestParams:request.requestParams responseString:operation.responseString responseData:operation.responseData responseObject:responseObject error:nil];
         if (resultCallBlock) {
@@ -119,7 +118,7 @@
         if ([_requestID integerValue] == NSIntegerMax) {
             _requestID = @(1);
         } else {
-            _requestID = @((NSInteger)_requestID + 1);
+            _requestID = @([_requestID integerValue] + 1);
         }
     }
     return _requestID;

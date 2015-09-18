@@ -42,18 +42,21 @@ static NSString * const kPOSTRequestMethod = @"POST";
 {
     if (HTTPMethod == CXNetWorkingHTTPRequestTypeGET) {
         CXCoreService *service = [[CXServiceFactory shareManager] serviceWithNetWorkingServiceType:serviceType];
-        NSString *signature = [CXSignatureGenerater signatureWithSigParams:params MethodName:methodName];
+//        NSString *signature = [CXSignatureGenerater signatureWithSigParams:params MethodName:methodName];
         NSMutableDictionary *requestParams = [NSMutableDictionary dictionaryWithDictionary:[CXCommonParamsGenerater commonParamsDictionary]];
         if (params != nil && params.count > 0) {
             [requestParams addEntriesFromDictionary:params];
         }
-        NSString *URLString = [NSString stringWithFormat:@"%@%@?sign=%@&%@",service.apiBaseURL,methodName,signature,[requestParams paramsString]];
-        NSLog(@"URLString=%@",URLString);
+        NSString *paramString = [requestParams paramsString];
+        NSString *signature = [CXSignatureGenerater signatureWithURLParamsString:paramString MethodName:methodName];
+//        NSString *URLString = [NSString stringWithFormat:@"%@%@?sign=%@&%@",service.apiBaseURL,methodName,signature,[requestParams paramsString]];
+        NSString *URLString = [NSString stringWithFormat:@"%@%@?%@&sign=%@",service.apiBaseURL,methodName,paramString,signature];
+//        NSLog(@"URLString=%@",URLString);
         NSMutableURLRequest *request = [self.httpRequestSerializer requestWithMethod:kGETRequestMethod URLString:URLString parameters:nil error:NULL];
         request.timeoutInterval = kTimeoutSeconds;
         request.requestParams = requestParams;      // 绑定的参数字典不带签名
         request.requestURL = URLString;
-        return request.copy;
+        return request;
     } else if (HTTPMethod == CXNetWorkingHTTPRequestTypePOST) {
         
     }

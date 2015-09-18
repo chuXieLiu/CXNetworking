@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 @interface NSURLRequest (Extension)
 
-@property (nonatomic,copy) NSDictionary *requestParams;
-@property (nonatomic,copy) NSString *requestURL;
+@property (nonatomic,strong) NSDictionary *requestParams;
+@property (nonatomic,strong) NSString *requestURL;
 
 
 @end

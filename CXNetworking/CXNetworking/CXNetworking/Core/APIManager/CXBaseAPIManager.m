@@ -10,6 +10,8 @@
 #import "CXCoreProxy.h"
 #import "AFNetworking.h"
 
+NSString * const KCXNetworkingManagerRequestIDKey = @"KCXNetworkingManagerRequestIDKey";
+
 @interface CXBaseAPIManager ()
 
 @property (nonatomic,assign,readwrite) BOOL isLoading;
@@ -46,6 +48,7 @@
 - (NSNumber *)loadData
 {
     NSNumber *requestID = [self loadDataFromNetworking];
+    [self.requestIDCollection addObject:requestID];
     return requestID;
 }
 
@@ -161,7 +164,9 @@
                 requestID = [self loadDataWithParams:params];
             }
         }
-        
+        NSMutableDictionary *paramsM = [params mutableCopy];
+        paramsM[KCXNetworkingManagerRequestIDKey] = requestID;
+        [self afterCallingAPIWithParams:paramsM.copy];          // 参数调用完毕
     } else {
         [self failureOnCallingApi:nil statusType:CXAPIManagerStatusTypeNoNetWork];
     }
@@ -175,10 +180,10 @@
     NSString *method = [self.child methodName];
     CXNetWorkingServiceType serviceType = [self.child serviceType];
     CXNetWorkingHTTPRequestType requestType = [self.child requestType];
-    if (requestType == CXNetWorkingHTTPRequestTypeGET) {
+    if (requestType == CXNetWorkingHTTPRequestTypeGET) {                // GET
         requestID = [[CXCoreProxy shareManager] invokeGetNetworingWithServiceType:serviceType methodName:method params:params result:^(CXCoreResponse *response) {
             if (response.responseStatusType == CXCoreResponseStautsTypeSuccess) {
-                
+                [self successOnCallingApi:response];
             } else {
                 CXAPIManagerStatusType statusType;
                 if (response.responseStatusType == CXCoreResponseStautsTypeTimeOut) {
@@ -189,7 +194,7 @@
                 [self failureOnCallingApi:response statusType:statusType];
             }
         }];
-    } else if (requestType == CXNetWorkingHTTPRequestTypePOST) {
+    } else if (requestType == CXNetWorkingHTTPRequestTypePOST) {        // POST
         
     }
     return requestID;
@@ -203,18 +208,26 @@
         self.data = response.responseData;
     }
     [self removeRequestIDFromCollection:response.requestID];
-    if ([self.validator manager:self isCorrectWithCallBackData:self.data]) {    // 返回数据验证
-        self.statusType = CXAPIManagerStatusTypeSuccess;
-        // 成功回调之前
-        [self beforeCallBackSuccessedResponse:response];
-        // 成功回调
-        [self.delegate APIMamagerDidSuccessCallBack:self];
-        // 成功回调之后
-        [self afterCallBackSuccessedResponse:response];
+    if (self.validator) {
+        if ([self.validator manager:self isCorrectWithCallBackData:self.data]) {    // 返回数据验证
+            [self successWithResponse:response];
+        } else {
+            [self failureOnCallingApi:response statusType:CXAPIManagerStatusTypeResponseError];
+        }
     } else {
-        [self failureOnCallingApi:response statusType:CXAPIManagerStatusTypeResponseError];
+        [self successWithResponse:response];
     }
-    
+}
+
+- (void)successWithResponse:(CXCoreResponse *)response
+{
+    self.statusType = CXAPIManagerStatusTypeSuccess;
+    // 成功回调之前
+    [self beforeCallBackSuccessedResponse:response];
+    // 成功回调
+    [self.delegate APIMamagerDidSuccessCallBack:self];
+    // 成功回调之后
+    [self afterCallBackSuccessedResponse:response];
 }
 
 - (void)failureOnCallingApi:(CXCoreResponse *)response statusType:(CXAPIManagerStatusType)statusType

@@ -11,5 +11,6 @@
 @interface CXSignatureGenerater : NSObject
 
 + (NSString *)signatureWithSigParams:(NSDictionary *)sigParams MethodName:(NSString *)methodName;
++ (NSString *)signatureWithURLParamsString:(NSString *)paramsString MethodName:(NSString *)methodName;
 
 @end

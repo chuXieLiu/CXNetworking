@@ -2,12 +2,12 @@
 //  TeHuiAPIManager.h
 //  CXNetworking
 //
-//  Created by c_xie on 15/9/6.
+//  Created by c_xie on 15/9/17.
 //  Copyright (c) 2015年 c_xie. All rights reserved.
 //
 
-#import "CXNetworkingBaseAPIManager.h"
+#import "CXBaseAPIManager.h"
 
-@interface TeHuiAPIManager : CXNetworkingBaseAPIManager
+@interface TeHuiAPIManager : CXBaseAPIManager
 
 @end

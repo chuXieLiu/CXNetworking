@@ -10,14 +10,21 @@
 #import "CXCoreContext.h"
 #import "CXAppUtils.h"
 
+static NSString * const kAppSignToken = @"1idj2in3Zk$09#d019i";
+
 @implementation CXSignatureGenerater
 
 + (NSString *)signatureWithSigParams:(NSDictionary *)sigParams MethodName:(NSString *)methodName
 {
     CXCoreContext *context = [CXCoreContext shareManger];
-    NSString *token = @"1idj2in3Zk$09#d019i";
-    NSString *signature = [CXAppUtils md5:[NSString stringWithFormat:@"%@%@%@%@",context.v,methodName, context.t, token]];
+    NSString *signature = [CXAppUtils md5:[NSString stringWithFormat:@"%@%@%@%@",context.v,methodName, context.t, kAppSignToken]];
     return signature;
+}
+
++ (NSString *)signatureWithURLParamsString:(NSString *)paramsString MethodName:(NSString *)methodName
+{
+    NSString *key = [NSString stringWithFormat:@"%@%@%@",methodName,paramsString,kAppSignToken];
+    return [CXAppUtils md5:key];
 }
 
 @end

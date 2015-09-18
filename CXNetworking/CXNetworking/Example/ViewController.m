@@ -7,11 +7,16 @@
 //
 
 #import "ViewController.h"
-#import "CXCoreProxy.h"
-#import "CXUserDefaults.h"
-#import "AFNetworkReachabilityManager.h"
+#import "TeHuiAPIManager.h"
+
 
 @interface ViewController ()
+<
+    CXAPIManagerInterceptor,
+    CXAPIManagerCallBackDelegate
+>
+
+@property (nonatomic,strong) TeHuiAPIManager *api;
 
 @end
 
@@ -19,83 +24,87 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [CXUserDefaults setObject:@"6831" forKey:kAppUidStringKey];
-    [CXUserDefaults setObject:@"57ksmtk8up4me85c4u3d0a5t95" forKey:kAppSidStringKey];
-    [CXUserDefaults setObject:@"15920428067" forKey:kAppUserStringKey];
-    [CXUserDefaults setObject:@"deb64e86bb631640e8ee473144abbd31e993991f1a36e68cb75126988d0db715" forKey:kAppDeviceTokenStringKey];
-    [CXUserDefaults setObject:@"广州市" forKey:kAppCityStringKey];
-    [CXUserDefaults setObject:@"113.328681,23.130497" forKey:kAppPoiStringkey];
+    self.api.interceptor = self;
+    self.api.delegate = self;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-//    NSLog(@"%d",[self isReachable]);
     
-    NSNumber *a = nil;
-    NSArray *arra = [[NSArray alloc] init];
-    NSLog(@"%d",[arra containsObject:a]);
+    BOOL isLoading = self.api.isLoading;
+    if (isLoading) {
+        return;
+    }
+    [self.api loadData];
+    NSLog(@"manager isLoading = %@",isLoading ? @"YES" : @"NO");
 }
+
+
+#pragma mark - CXAPIManagerCallBackDelegate
 
 /*
-
- typedef NS_ENUM(NSInteger, AFNetworkReachabilityStatus) {
- AFNetworkReachabilityStatusUnknown          = -1,
- AFNetworkReachabilityStatusNotReachable     = 0,
- AFNetworkReachabilityStatusReachableViaWWAN = 1,
- AFNetworkReachabilityStatusReachableViaWiFi = 2,
- };
+ CXAPIManagerStatusTypeDefault = 0,              //没有产生过API请求。
+ CXAPIManagerStatusTypeSuccess,  = 1            //API请求成功且返回数据正确
+ CXAPIManagerStatusTypeResponseError, = 2        //API请求成功但返回数据不正确
+ CXAPIManagerStatusTypeParamsError, = 3         //参数错误
+ CXAPIManagerStatusTypeTimeout, =4             //请求超时
+ CXAPIManagerStatusTypeNoNetWork  =5           //网络不通
  */
-- (NSInteger)isReachable
+
+- (void)APIMamagerDidSuccessCallBack:(CXBaseAPIManager *)manager
 {
-    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
-    NSLog(@"isReachable=%d",[[AFNetworkReachabilityManager sharedManager] isReachable]);
-    return [AFNetworkReachabilityManager sharedManager].networkReachabilityStatus;
-   
-//    if ([AFNetworkReachabilityManager sharedManager].networkReachabilityStatus == AFNetworkReachabilityStatusUnknown) {
-//        return YES;
-//    } else {
-//        return [[AFNetworkReachabilityManager sharedManager] isReachable];
-//    }
-    
-    
-//    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-//        
-//        switch (status) {
-//                
-//            case AFNetworkReachabilityStatusNotReachable:{
-//                
-//                NSLog(@"无网络");
-//                
-//                break;
-//                
-//            }
-//                
-//            case AFNetworkReachabilityStatusReachableViaWiFi:{
-//                
-//                NSLog(@"WiFi网络");
-//                
-//                break;
-//                
-//            }
-//                
-//            case AFNetworkReachabilityStatusReachableViaWWAN:{
-//                
-//                NSLog(@"无线网络");
-//                
-//                break;
-//                
-//            }
-//                
-//            default:
-//                
-//                break;
-//                
-//        }
-//        
-//    }];
-//    return YES;
-    
+    NSLog(@"%s,statusType = %zd",__func__,manager.statusType);
 }
+
+- (void)APIManagerDidFailureCallBack:(CXBaseAPIManager *)manager
+{
+    NSLog(@"%s,statusType = %zd",__func__,manager.statusType);
+}
+
+#pragma mark - CXAPIManagerInterceptor
+
+- (void)manager:(CXBaseAPIManager *)manager beforeCallBackSuccessedResponse:(CXCoreResponse *)response
+{
+    NSLog(@"%s,requestID = %@,requestURL = %@",__func__,response.requestID,response.requestURL);
+}
+
+- (void)manager:(CXBaseAPIManager *)manager afterCallBackSuccessedResponse:(CXCoreResponse *)response
+{
+    NSLog(@"%s,requestID = %@,requestURL = %@",__func__,response.requestID,response.requestURL);;
+}
+
+- (void)manager:(CXBaseAPIManager *)manager beforeCallBackFailuredResponse:(CXCoreResponse *)response
+{
+    NSLog(@"%s,requestID = %@,requestURL = %@",__func__,response.requestID,response.requestURL);
+}
+
+- (void)manager:(CXBaseAPIManager *)manager afterCallBackFailuredResponse:(CXCoreResponse *)response
+{
+    NSLog(@"%s,requestID = %@,requestURL = %@",__func__,response.requestID,response.requestURL);
+}
+
+- (BOOL)manager:(CXBaseAPIManager *)manager shouldCallAPIWithParams:(NSDictionary *)params
+{
+    NSLog(@"%s",__func__);
+    NSLog(@"%@",params);
+    return YES;
+}
+
+- (void)manager:(CXBaseAPIManager *)manager afterCallingAPIWithParams:(NSDictionary *)params
+{
+    NSLog(@"%s",__func__);
+    NSLog(@"%@",params);
+}
+
+#pragma mark - getter
+
+- (TeHuiAPIManager *)api
+{
+    if (_api == nil) {
+        _api = [[TeHuiAPIManager alloc] init];
+    }
+    return _api;
+}
+
 
 @end
