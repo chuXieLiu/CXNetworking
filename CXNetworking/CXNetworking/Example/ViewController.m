@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "TeHuiAPIManager.h"
+#import "TeHuiListReformer.h"
 
 
 @interface ViewController ()
@@ -17,6 +18,8 @@
 >
 
 @property (nonatomic,strong) TeHuiAPIManager *api;
+@property (nonatomic,strong) TeHuiListReformer *teHuiListReformer;
+@property (nonatomic,copy) NSNumber *requestID;
 
 @end
 
@@ -26,6 +29,7 @@
     [super viewDidLoad];
     self.api.interceptor = self;
     self.api.delegate = self;
+    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -33,27 +37,32 @@
     
     BOOL isLoading = self.api.isLoading;
     if (isLoading) {
+        [self.api cancelRequestWithID:self.requestID];
         return;
     }
-    [self.api loadData];
+    self.requestID = [self.api loadData];
     NSLog(@"manager isLoading = %@",isLoading ? @"YES" : @"NO");
+    
 }
 
 
 #pragma mark - CXAPIManagerCallBackDelegate
-
 /*
- CXAPIManagerStatusTypeDefault = 0,              //没有产生过API请求。
- CXAPIManagerStatusTypeSuccess,  = 1            //API请求成功且返回数据正确
- CXAPIManagerStatusTypeResponseError, = 2        //API请求成功但返回数据不正确
- CXAPIManagerStatusTypeParamsError, = 3         //参数错误
- CXAPIManagerStatusTypeTimeout, =4             //请求超时
- CXAPIManagerStatusTypeNoNetWork  =5           //网络不通
- */
+typedef NS_ENUM (NSUInteger, CXAPIManagerStatusType){
+    CXAPIManagerStatusTypeDefault,              //  没有产生过API请求。
+    CXAPIManagerStatusTypeSuccess,              //  API请求成功且返回数据正确
+    CXAPIManagerStatusTypeResponseError,        //  API请求成功但返回数据不正确
+    CXAPIManagerStatusTypeParamsError,          //  参数错误
+    CXAPIManagerStatusTypeTimeout,              //  请求超时
+    CXAPIManagerStatusTypeOperationBeCancelled, //  操作被取消
+    CXAPIManagerStatusTypeNoNetWork             //  网络不通
+};*/
 
 - (void)APIMamagerDidSuccessCallBack:(CXBaseAPIManager *)manager
 {
     NSLog(@"%s,statusType = %zd",__func__,manager.statusType);
+    NSDictionary *data = [manager fetchDataWithReformer:self.teHuiListReformer];
+    NSLog(@"data=%@",data);
 }
 
 - (void)APIManagerDidFailureCallBack:(CXBaseAPIManager *)manager
@@ -104,6 +113,14 @@
         _api = [[TeHuiAPIManager alloc] init];
     }
     return _api;
+}
+
+- (TeHuiListReformer *)teHuiListReformer
+{
+    if (_teHuiListReformer == nil) {
+        _teHuiListReformer = [[TeHuiListReformer alloc] init];
+    }
+    return _teHuiListReformer;
 }
 
 

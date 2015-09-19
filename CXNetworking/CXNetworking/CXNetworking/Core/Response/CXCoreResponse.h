@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-/*
- 除了超时以外的错误，都以无网络处理
- */
+
 typedef NS_ENUM(NSUInteger, CXCoreResponseStautsType) {
     CXCoreResponseStautsTypeSuccess,
     CXCoreResponseStautsTypeTimeOut,
+    CXCoreResponseStautsTypeCancel,
     CXCoreResponseStautsTypeNoNetwork
 };
 

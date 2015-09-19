@@ -49,9 +49,7 @@ static NSString * const kPOSTRequestMethod = @"POST";
         }
         NSString *paramString = [requestParams paramsString];
         NSString *signature = [CXSignatureGenerater signatureWithURLParamsString:paramString MethodName:methodName];
-//        NSString *URLString = [NSString stringWithFormat:@"%@%@?sign=%@&%@",service.apiBaseURL,methodName,signature,[requestParams paramsString]];
         NSString *URLString = [NSString stringWithFormat:@"%@%@?%@&sign=%@",service.apiBaseURL,methodName,paramString,signature];
-//        NSLog(@"URLString=%@",URLString);
         NSMutableURLRequest *request = [self.httpRequestSerializer requestWithMethod:kGETRequestMethod URLString:URLString parameters:nil error:NULL];
         request.timeoutInterval = kTimeoutSeconds;
         request.requestParams = requestParams;      // 绑定的参数字典不带签名

@@ -188,6 +188,8 @@ NSString * const KCXNetworkingManagerRequestIDKey = @"KCXNetworkingManagerReques
                 CXAPIManagerStatusType statusType;
                 if (response.responseStatusType == CXCoreResponseStautsTypeTimeOut) {
                     statusType = CXAPIManagerStatusTypeTimeout;
+                } else if (response.responseStatusType == CXCoreResponseStautsTypeCancel) {
+                    statusType = CXAPIManagerStatusTypeOperationBeCancelled;
                 } else if (response.responseStatusType == CXCoreResponseStautsTypeNoNetwork) {
                     statusType = CXAPIManagerStatusTypeNoNetWork;
                 }
@@ -209,10 +211,14 @@ NSString * const KCXNetworkingManagerRequestIDKey = @"KCXNetworkingManagerReques
     }
     [self removeRequestIDFromCollection:response.requestID];
     if (self.validator) {
-        if ([self.validator manager:self isCorrectWithCallBackData:self.data]) {    // 返回数据验证
-            [self successWithResponse:response];
+        if ([self.validator respondsToSelector:@selector(manager:isCorrectWithCallBackData:)]) {
+            if ([self.validator manager:self isCorrectWithCallBackData:self.data]) {    // 返回数据验证
+                [self successWithResponse:response];
+            } else {
+                [self failureOnCallingApi:response statusType:CXAPIManagerStatusTypeResponseError];
+            }
         } else {
-            [self failureOnCallingApi:response statusType:CXAPIManagerStatusTypeResponseError];
+            [self successWithResponse:response];
         }
     } else {
         [self successWithResponse:response];

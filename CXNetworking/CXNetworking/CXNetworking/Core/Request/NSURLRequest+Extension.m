@@ -14,18 +14,15 @@
 static char RequestParamsKey;
 - (void)setRequestParams:(NSDictionary *)requestParams
 {
-    NSLog(@"%@",self);
     objc_setAssociatedObject(self, &RequestParamsKey, requestParams, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 - (NSDictionary *)requestParams
 {
-    NSLog(@"%@",self);
-    NSLog(@"%@",objc_getAssociatedObject(self, &RequestParamsKey));
     return objc_getAssociatedObject(self, &RequestParamsKey);
 }
-static void *requestURLKey;
-//static char requestURLKey;
+
+static char requestURLKey;
 - (void)setRequestURL:(NSString *)requestURL
 {
     

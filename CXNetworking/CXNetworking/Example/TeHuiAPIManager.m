@@ -68,8 +68,10 @@
 - (BOOL)manager:(CXBaseAPIManager *)manager isCorrectWithCallBackData:(NSDictionary *)data
 {
     NSLog(@"%s",__func__);
-    NSLog(@"data=%@",data);
-    return NO;
+    NSLog(@"isCorrectWithCallBackData = %@",data);
+    BOOL flag = [data isKindOfClass:[NSDictionary class]];
+    flag = data.count > 0;
+    return flag;
 }
 
 

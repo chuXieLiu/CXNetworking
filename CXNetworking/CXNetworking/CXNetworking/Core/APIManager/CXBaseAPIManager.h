@@ -87,12 +87,13 @@ UIKIT_EXTERN NSString * const KCXNetworkingManagerRequestIDKey;
  * manager状态
  */
 typedef NS_ENUM (NSUInteger, CXAPIManagerStatusType){
-    CXAPIManagerStatusTypeDefault,              //没有产生过API请求。
-    CXAPIManagerStatusTypeSuccess,              //API请求成功且返回数据正确
-    CXAPIManagerStatusTypeResponseError,        //API请求成功但返回数据不正确
-    CXAPIManagerStatusTypeParamsError,          //参数错误
-    CXAPIManagerStatusTypeTimeout,              //请求超时
-    CXAPIManagerStatusTypeNoNetWork             //网络不通
+    CXAPIManagerStatusTypeDefault,              //  没有产生过API请求。
+    CXAPIManagerStatusTypeSuccess,              //  API请求成功且返回数据正确
+    CXAPIManagerStatusTypeResponseError,        //  API请求成功但返回数据不正确
+    CXAPIManagerStatusTypeParamsError,          //  参数错误
+    CXAPIManagerStatusTypeTimeout,              //  请求超时
+    CXAPIManagerStatusTypeOperationBeCancelled, //  操作被取消
+    CXAPIManagerStatusTypeNoNetWork             //  网络不通
 };
 
 

@@ -49,11 +49,16 @@
     } else {
         if (error.code == NSURLErrorTimedOut) { // -1001
             statusType = CXCoreResponseStautsTypeTimeOut;
+        } else if (error.code == NSURLErrorCancelled) {
+            statusType = CXCoreResponseStautsTypeCancel;
         } else {
             statusType = CXCoreResponseStautsTypeNoNetwork;
         }
     }
     return statusType;
 }
+/*
+kCFURLErrorCancelled = -999,操作被取消，
+*/
 
 @end
