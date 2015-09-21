@@ -63,6 +63,8 @@ NSString * const kCurrentDebugEnvironmentIsTestKey = @"kCurrentDebugEnvironmentI
     } else {
         self.isTest = NO;
     }
+    
+    self.isTest = NO;
 }
 
 

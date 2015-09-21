@@ -83,6 +83,25 @@ NSString * const KCXNetworkingManagerRequestIDKey = @"KCXNetworkingManagerReques
     return data;
 }
 
+#pragma mark - 供非APIManager子类访问提供标记与附加参数(访问接口或参数可能与manager相同),内部慎用
+
+- (NSDictionary *)associatedForAPIParams:(NSDictionary *)params
+{
+    IMP selfIMP = [self methodForSelector:@selector(associatedForAPIParams:)];
+    IMP childIMP = [self.child methodForSelector:@selector(associatedForAPIParams:)];  // 子类找不到找父类
+    if (selfIMP == childIMP) {            // child继承自BaseAPIManager,则会跑到子类的IMP中，整个方法都不会执行到
+        return params;
+    } else {                              // child是其他类
+        NSDictionary *resultParams = nil;
+        if ([self.child respondsToSelector:@selector(associatedForAPIParams:)]) {
+            resultParams = [self.child associatedForAPIParams:params];      // 实现非manager也能对参数进行修改
+        } else {
+            resultParams = params;
+        }
+        return resultParams;
+    }
+}
+
 #pragma mark - 访问网络成功回调之前
 
 - (void)beforeCallBackSuccessedResponse:(CXCoreResponse *)response
@@ -151,7 +170,7 @@ NSString * const KCXNetworkingManagerRequestIDKey = @"KCXNetworkingManagerReques
     if (self.paramSource != nil && [self.paramSource respondsToSelector:@selector(paramForAPI:)]) {
         params = [self.paramSource paramForAPI:self];
     }
-    
+    params = [self associatedForAPIParams:params];
     if (self.isReachable) {                                     // 网络是否可用
         if ([self shouldCallAPIWithParams:params]) {            // 是否允许参数调用
             if (self.validator && [self.validator respondsToSelector:@selector(manager:isCorrectWithParams:)]) {

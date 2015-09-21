@@ -85,7 +85,6 @@
         return;
     }
     [operation cancel];
-    NSLog(@"be cancel");
     [self.operationCollection removeObjectForKey:operation];
 }
 

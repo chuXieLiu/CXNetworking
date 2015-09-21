@@ -42,7 +42,6 @@ static NSString * const kPOSTRequestMethod = @"POST";
 {
     if (HTTPMethod == CXNetWorkingHTTPRequestTypeGET) {
         CXCoreService *service = [[CXServiceFactory shareManager] serviceWithNetWorkingServiceType:serviceType];
-//        NSString *signature = [CXSignatureGenerater signatureWithSigParams:params MethodName:methodName];
         NSMutableDictionary *requestParams = [NSMutableDictionary dictionaryWithDictionary:[CXCommonParamsGenerater commonParamsDictionary]];
         if (params != nil && params.count > 0) {
             [requestParams addEntriesFromDictionary:params];

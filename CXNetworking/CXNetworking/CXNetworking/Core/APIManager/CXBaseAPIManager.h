@@ -23,6 +23,10 @@ UIKIT_EXTERN NSString * const KCXNetworkingManagerRequestIDKey;
 - (NSString *)methodName;                           // 接口方法
 - (CXNetWorkingServiceType)serviceType;             // 接口类型
 - (CXNetWorkingHTTPRequestType)requestType;         // 请求方式
+
+@optional
+- (NSDictionary *)associatedForAPIParams:(NSDictionary *)params;    // 附加参数
+
 @end
 
 
@@ -114,6 +118,7 @@ typedef NS_ENUM (NSUInteger, CXAPIManagerStatusType){
 - (void)cancelAllRequest;
 - (void)cancelRequestWithID:(NSNumber *)requestID;
 - (id)fetchDataWithReformer:(id<CXAPIManagerResponseDataReformer>)reformer;
+- (NSDictionary *)associatedForAPIParams:(NSDictionary *)params;    // 内部慎用，最好不用！会在外部不知情的情况下修改参数
 
 
 // 需要调用super

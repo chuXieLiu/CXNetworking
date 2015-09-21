@@ -32,12 +32,12 @@
 
 - (NSString *)methodName
 {
-    return @"special/companylist";
+    return @"app/menu";
 }
 
 - (CXNetWorkingServiceType)serviceType
 {
-    return CXNetWorkingServiceTypeTeHui;
+    return CXNetWorkingServiceTypeDefault;
 }
 
 - (CXNetWorkingHTTPRequestType)requestType
@@ -45,15 +45,23 @@
     return CXNetWorkingHTTPRequestTypeGET;
 }
 
+- (NSDictionary *)associatedForAPIParams:(NSDictionary *)params
+{
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:params];
+    dict[@"size"] = @"1";
+    return dict;
+}
+
 #pragma mark - CXAPIManagerParamSource
 
 - (NSDictionary *)paramForAPI:(CXBaseAPIManager *)manager
 {
     NSLog(@"%s",__func__);
-    return @{
-             @"company_id" : @"",
-             @"type_id"    : @""
-             };
+//    return @{
+//             @"company_id" : @"",
+//             @"type_id"    : @""
+//             };
+    return nil;
 }
 
 #pragma mark - CXAPIManagerValidator

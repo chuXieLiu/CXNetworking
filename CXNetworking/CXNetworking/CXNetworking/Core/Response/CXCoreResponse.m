@@ -44,7 +44,7 @@
 + (CXCoreResponseStautsType)statusTypeWithError:(NSError *)error
 {
     CXCoreResponseStautsType statusType;
-    if (error == nil) {
+    if (error == nil) { // NSURLErrorAppTransportSecurityRequiresSecureConnection
         statusType = CXCoreResponseStautsTypeSuccess;
     } else {
         if (error.code == NSURLErrorTimedOut) { // -1001

@@ -9,7 +9,7 @@
 #import "CXTeHuiService.h"
 
 static NSString * const kTeHuiTestApiBaseURL = @"http://frontend.t.csq.im:8080/";
-static NSString * const kTeHuiProduceApiBaseURL =  @"http://api.csq.im:8080/";
+static NSString * const kTeHuiProduceApiBaseURL =  @"https://api.csq.im:8443/";
 
 @implementation CXTeHuiService
 

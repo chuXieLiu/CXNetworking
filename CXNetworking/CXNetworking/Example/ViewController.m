@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "TeHuiAPIManager.h"
 #import "TeHuiListReformer.h"
+#import "CXCoreRequest.h"
 
 
 @interface ViewController ()
@@ -42,20 +43,20 @@
     }
     self.requestID = [self.api loadData];
     NSLog(@"manager isLoading = %@",isLoading ? @"YES" : @"NO");
-    
 }
+
 
 
 #pragma mark - CXAPIManagerCallBackDelegate
 /*
 typedef NS_ENUM (NSUInteger, CXAPIManagerStatusType){
-    CXAPIManagerStatusTypeDefault,              //  没有产生过API请求。
-    CXAPIManagerStatusTypeSuccess,              //  API请求成功且返回数据正确
-    CXAPIManagerStatusTypeResponseError,        //  API请求成功但返回数据不正确
-    CXAPIManagerStatusTypeParamsError,          //  参数错误
-    CXAPIManagerStatusTypeTimeout,              //  请求超时
-    CXAPIManagerStatusTypeOperationBeCancelled, //  操作被取消
-    CXAPIManagerStatusTypeNoNetWork             //  网络不通
+    CXAPIManagerStatusTypeDefault,              //  没有产生过API请求。0
+    CXAPIManagerStatusTypeSuccess,              //  API请求成功且返回数据正确1
+    CXAPIManagerStatusTypeResponseError,        //  API请求成功但返回数据不正确2
+    CXAPIManagerStatusTypeParamsError,          //  参数错误3
+    CXAPIManagerStatusTypeTimeout,              //  请求超时4
+    CXAPIManagerStatusTypeOperationBeCancelled, //  操作被取消5
+    CXAPIManagerStatusTypeNoNetWork             //  网络不通6
 };*/
 
 - (void)APIMamagerDidSuccessCallBack:(CXBaseAPIManager *)manager

@@ -125,7 +125,7 @@
 
 - (NSString *)role
 {
-    return @"manager";
+    return @"normal";
 }
 
 @end

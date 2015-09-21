@@ -9,7 +9,7 @@
 #import "CXDefaultService.h"
 
 static NSString * const kDefaultTestApiBaseURL = @"http://frontend.t.csq.im/ci/";
-static NSString * const kDefaultProduceApiBaseURL =  @"http://api.csq.im/ci/";
+static NSString * const kDefaultProduceApiBaseURL =  @"https://api.csq.im/ci/";
 
 @implementation CXDefaultService
 
