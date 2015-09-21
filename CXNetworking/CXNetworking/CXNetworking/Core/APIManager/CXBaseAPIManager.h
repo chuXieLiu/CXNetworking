@@ -6,6 +6,12 @@
 //  Copyright (c) 2015年 c_xie. All rights reserved.
 //
 
+/**************
+ * 暂时只支持GET
+ * 后台需要SSL
+ * 关闭bitCode
+ *************/
+
 #import <UIKit/UIKit.h>
 #import "CXNetworkingConst.h"
 #import "CXCoreResponse.h"
